@@ -79,7 +79,7 @@ def app():
     p1 = jp.QDiv(a=wp, text="These graphs represent course review analysis")
  
     hc = jp.HighCharts(a=wp, options=chart_def)
-    hc.options.xAxis.categories = list(weekday_average.index.get_level_values(0))
+    hc.options.xAxis.categories = list(weekday_average.index.get_level_values(0)) # index.get_level_values() this function is used to select one level index among mulitindex level.
     hc.options.series[0].data = list(weekday_average['Rating'])
  
     return wp
