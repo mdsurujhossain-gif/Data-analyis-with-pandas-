@@ -82,7 +82,7 @@ def app():
     p1 = jp.QDiv(a=wp,text="These graphs represent course review analysis")
     
     hc = jp.HighCharts(a=wp,options=charts_def)
-    hc_data = [{"name":v1,"y":v2} for v1,v2 in zip(share.index,share[1])]
+    hc_data = [{"name":v1,"y":v2} for v1,v2 in list(zip(share.index,share.values))]
     hc.options.series[0].data=hc_data
     
     return wp
