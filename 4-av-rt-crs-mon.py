@@ -77,7 +77,7 @@ def app():
     hc.options.title.text = "Average Rating by course by month"
     hc.options.xAxis.categories = list(monthly_average_course.index)
 
-    hc_data = [{"name":v1,"data":[v2 for v2 in monthly_average_course[v1]]} for v1 in monthly_average_course.columns]
+    hc_data = [{"name":v1[1],"data":[v2 for v2 in monthly_average_course[v1]]} for v1 in monthly_average_course.columns]
     hc.options.series =hc_data
 
 
